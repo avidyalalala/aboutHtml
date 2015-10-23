@@ -2,7 +2,9 @@
 
 <meta charset="utf-8"/>
 <html>
-<head></head>
+<head>
+<script src="lib/require.js" type="text/javascript"></script>
+</head>
 <body>
 <div>
     啦啦啦啦啦啦哈哈哈哈哈
@@ -12,11 +14,11 @@
     啦啦啦啦啦啦哈哈哈哈哈
     啦啦啦啦啦啦哈哈哈哈哈
     啦啦啦啦啦啦哈哈哈哈哈
-    <div style="float:right;background:pink">hh</div>
+    <div style="float:right;background:orange">hhlalalalalalalalalalalala</div>
 </div>
 <hr/>
 <div>
-    <div style="float:right;background:green">lala</div>
+    <div style="float:right;background:green">lalalalalalalalalalalala</div>
     啦啦啦啦啦啦哈哈哈哈哈
     啦啦啦啦啦啦哈哈哈哈哈
     啦啦啦啦啦啦哈哈哈哈哈
@@ -26,11 +28,38 @@
     啦啦啦啦啦啦哈哈哈哈哈
 </div>
 <hr/>
-<div style="width:100px;margin:10px 0;background:pink">
+<div style="height:1.5rem;margin:10px 0;background:orange">
 margin:10px 0;
 </div>
-<div style="width:100px;;margin:10px 0;background:green">
+<div style="height:1.5rem;;margin:10px 0;background:green">
 margin:10px 0;
 </div>
+<hr/>
+<h3>inline margin</h3>
+<img style="background:orange;padding:10px;margin:10px" src="logo.png" width="300rem">
+<img style="background:green;padding:10px;margin:10px" src="logo.png" width="300rem">
+<img  id="block_height" style="background:gray;border:5px solid #efefef;padding:10px;margin:10px" src="logo.png" width="800rem">
+<script>
+require(["lib/zepto.js"],function(){
+    var el_z=$("#block_height");
+    console.log("height: "+el_z.css("height"));
+    console.log("width: "+el_z.css("width"));
+    console.log("clientHeight: "+el_z.attr("clientHeight"));  
+    console.log("clientWidth: "+el_z.attr("clientWidth"));  
+    console.log("offsetHeight: "+el_z.attr("offsetHeight"));  
+    console.log("offsetWidth: "+el_z.attr("offsetWidth"));  
+    console.log(el_z.attr("src"));  
+    }
+);
+</script>
+<hr/>
+<h3>height, clientHeight, offsetHeight</h3>
+<div style="height:30px; padding:5px; background:orange; border:5px solid #eeee11" id="test_height">哈哈哈😄hahaha</div>
+<script>
+require(["lib/zepto.js"],function(){
+    var el_z=$("#test_height");
+    console.log(el_z.css("height"))
+})
+</script>
 </body>
 </html>
